@@ -10,7 +10,8 @@ document.addEventListener('markdownrender', function ()
 		document.querySelector('div.container').appendChild(subtitle);
 	}
 
-	var focusPoints = document.querySelectorAll('ol > li');
+	var focus_selector = (window.MarkdownTalk && window.MarkdownTalk.focusSelector) || 'ol > li';
+	var focusPoints = document.querySelectorAll(focus_selector);
 	if (!focusPoints.length)
 	{
 		// no need for the legend if they have nothing to navigate
@@ -19,7 +20,7 @@ document.addEventListener('markdownrender', function ()
 	}
 
 	var focusIndex = 0;
-	focusPoints[focusIndex].classList.add('selected');
+	focusPoints[focusIndex].classList.add('focus_point');
 
 	var hideLegend = false;
 	var spans = document.querySelectorAll('legend > span');
@@ -61,9 +62,9 @@ document.addEventListener('markdownrender', function ()
 		if (e.keyCode === 71) // g
 		{
 			window.scrollTo(0, 0);
-			focusPoints[focusIndex].classList.remove('selected');
+			focusPoints[focusIndex].classList.remove('focus_point');
 			focusIndex = 0;
-			focusPoints[focusIndex].classList.add('selected');
+			focusPoints[focusIndex].classList.add('focus_point');
 			return;
 		}
 
@@ -71,10 +72,10 @@ document.addEventListener('markdownrender', function ()
 
 		if (focusPoints[focusIndex + direction])
 		{
-			focusPoints[focusIndex].classList.remove('selected');
+			focusPoints[focusIndex].classList.remove('focus_point');
 			focusIndex += direction;
 			var focusPoint = focusPoints[focusIndex];
-			focusPoint.classList.add('selected');
+			focusPoint.classList.add('focus_point');
 
 			var top = focusPoint.offsetTop - ( window.innerHeight / 2 ) + (focusPoint.offsetHeight / 2);
 			window.scrollTo(0, Math.min(top, focusPoint.offsetTop));

@@ -115,7 +115,7 @@ div.container > ol > li:before {
 	counter-increment: li-counter;
 }
 
-div.container > ol > li.selected:before {
+div.container > ol > li.focus_point:before {
 	color: #099;
 }
 
@@ -123,7 +123,7 @@ ol li > p {
 	font-family: sans-serif;
 }
 
-ol li.selected {
+.focus_point {
 	border: 2px solid #099;
 	border-radius: 10px;
 	background-color: #181818;
