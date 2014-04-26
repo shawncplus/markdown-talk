@@ -1,0 +1,83 @@
+@font-face {
+	font-family: mplus-1mn-regular;
+	src: url('/fonts/mplus-1mn-regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: mplus-1mn-medium;
+	src: url('/fonts/mplus-1mn-medium.ttf') format('truetype');
+}
+@font-face {
+	font-family: mplus-1c-regular;
+	src: url('/fonts/mplus-1c-regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: mplus-1c-thin;
+	src: url('/fonts/mplus-1c-thin.ttf') format('truetype');
+}
+
+.navbar .brand {
+	font-family: mplus-1c-regular, sans-serif;
+}
+
+.navbar .subtitle {
+	font-family: mplus-1c-thin, sans-serif;
+	color: #e80;
+}
+
+.navbar .navbar-inner {
+	background-color: #111;
+}
+
+body {
+	font-family: mplus-1mn-regular, monospace;
+	color: #e7e7e7;
+	background-color: #222;
+}
+
+code, pre {
+	font-family: mplus-1mn-medium;
+}
+
+ol + p, pre + ol {
+	border-bottom: 5px solid #fb7;
+}
+
+div.container > ol > li:before {
+	font-family: mplus-1c-regular;
+}
+
+ol li > p {
+	font-family: mplus-1c-regular;
+}
+
+blockquote {
+	border-color: #960050;
+}
+
+blockquote p {
+	font-family: mplus-1mn-medium;
+	border: 1px solid #960050;
+}
+
+legend {
+	background-color: #1b1b1b;
+	border: 1px solid #ccc;
+}
+
+legend a {
+	background-color: #121212;
+	border-right: 2px solid #222;
+}
+
+legend span {
+	border-right: 1px solid #c9c9c9;
+}
+
+legend span:last-child {
+	border: none;
+	padding: none;
+}
+
+legend span key {
+	color: #099;
+}

@@ -1,0 +1,147 @@
+legend {
+	position: fixed;
+	right: 0;
+	top: 105px;
+	width: 320px;
+	margin-bottom: 1px;
+	background-color: #1b1b1b;
+	line-height: initial;
+	border: 1px solid #ccc;
+	border-right: none;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+legend a {
+	background-color: #121212;
+	cursor: pointer;
+	padding: 0 10px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-right: 2px solid #222;
+}
+
+legend a:hover, legend a:active {
+	text-decoration: none;
+}
+
+legend span {
+	border-right: 1px solid #c9c9c9;
+	padding-right: 5px;
+}
+
+legend span:last-child {
+	border: none;
+	padding: none;
+}
+
+legend span key {
+	color: #099;
+}
+
+li {
+	line-height: 150%;
+}
+
+.navbar-fixed-top {
+	position: absolute;
+}
+
+.navbar .brand, .navbar .subtitle {
+	text-align: center;
+	text-shadow: none;
+}
+
+.navbar .brand {
+	padding: 22px 20px 5px 25px;
+	font-weight: bold;
+	font-size: 40px;
+	width: 100%;
+	border-right: none;
+	color: #ae0;
+}
+
+.navbar .navbar-inner {
+	background-image: none;
+}
+
+body {
+	font-size: 25px;
+	line-height: 150%;
+	padding-top: 120px;
+}
+
+code, pre {
+	font-family: monospace;
+	font-size: 20px;
+	line-height: 150%;
+	border: 1px solid #e1e1e8;
+	border-radius: 3px;
+	text-shadow: none;
+	background-color: black;
+}
+
+code span[class] {
+	color: white !important;
+}
+
+ol + p, pre + ol {
+	margin-top: 50px;
+	padding-bottom: 5px;
+}
+
+div.container > ol {
+	counter-reset: li-counter;
+}
+
+div.container > ol > li {
+	list-style-type: none;
+	position: relative;
+	border-left: 1px solid #777;
+	padding-left: 10px;
+	margin-top: 10px;
+}
+
+div.container > ol > li:before {
+	position: absolute;
+	top: 0;
+	left: -1em;
+	width: 0.8em;
+
+	font-family: sans-serif;
+	font-weight: bold;
+	color: #555;
+	content: counter(li-counter);
+	counter-increment: li-counter;
+}
+
+div.container > ol > li.selected:before {
+	color: #099;
+}
+
+ol li > p {
+	font-family: sans-serif;
+}
+
+ol li.selected {
+	border: 2px solid #099;
+	border-radius: 10px;
+	background-color: #181818;
+	padding: 10px;
+	margin: 10px 0;
+	border-left: none !important;
+}
+
+blockquote {
+	padding-left: 0;
+}
+
+blockquote p {
+	padding-left: 10px;
+	white-space: pre;
+	font-family: monospace;
+	font-size: 20px;
+	line-height: 150%;
+	text-shadow: none;
+	background-color: black;
+}
