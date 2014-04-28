@@ -24,7 +24,6 @@ document.addEventListener('markdownrender', function ()
 
 	var hideLegend = false;
 	var spans = document.querySelectorAll('legend > span');
-	var initialLegendWidth = document.querySelector('legend').offsetWidth;
 
 	function toggleLegend(el)
 	{
@@ -35,7 +34,7 @@ document.addEventListener('markdownrender', function ()
 			span.style.display = hideLegend ? 'none' : '';
 		});
 		el.innerHTML = hideLegend ? '⊞' : '⊟';
-		el.parentNode.style.width = hideLegend ? el.offsetWidth + 'px' : initialLegendWidth + 'px';
+		el.parentNode.style.width = hideLegend ? el.offsetWidth + 'px' : 'auto';
 	};
 
 	document.querySelector('legend > a').onclick = toggleLegend;
