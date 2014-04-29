@@ -13,7 +13,6 @@ Patched version of https://github.com/arturadib/strapdown which supports a 'sour
     * Specify as a `source=` query parameter in any of the above formats
 * If needed configure the focusSelector to be whatever you want to jump between, defaults to `ul > li`. See example in example.html. As with `source` this can be specified as a `focus=` query parameter
 * If needed you can turn code prettifying on/off, see example.html (defaults to on)
-* If you want to have an outline just put `buildOutline: true` in the `MarkdownTalk` config.
 
 
 

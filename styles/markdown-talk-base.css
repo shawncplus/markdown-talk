@@ -150,15 +150,3 @@ blockquote p {
 	text-shadow: none;
 	background-color: black;
 }
-
-div.outline ul {
-	top: 105px;
-	position: fixed;
-	font-size: 14px;
-	width: inherit;
-}
-
-div.outline li.active {
-	font-weight: bold;
-	text-decoration: underline;
-}
