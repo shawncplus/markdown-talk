@@ -2,7 +2,7 @@ legend {
 	position: fixed;
 	right: 0;
 	top: 105px;
-	width: 320px;
+	width: auto;
 	margin-bottom: 1px;
 	background-color: #1b1b1b;
 	line-height: initial;
