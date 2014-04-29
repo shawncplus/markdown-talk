@@ -3,8 +3,17 @@ Patched version of https://github.com/arturadib/strapdown which supports a 'sour
 ##Usage
 * clone this repo
 * rename example.html to whatever you want it to be
-* update the source attribute of the xmp tag. This can either be a local reference: 'foo.mkd' as if you were referencing a local css file, for example; or a github reference in the format of `user/repo:path` where path is the file path in the repo from the repo root (go to the filename on github and click the Copy to Clipboard next to the name)
-* If needed configure the focusSelector to be whatever you want to jump between, defaults to `ul > li`. See example in example.html.
+* Specifying markdown can be done any of the following ways:
+    * Putting it directly into the `<xmp></xmp>` tag. (Base functionality of strapdown)
+    * A reference in in the 'source' attribute of the xmp tag, reference being one of:
+        * `source="foo.md"` - Reference to file on the same server
+        * `source="githubuser/repo"` - Will pull the README at master from the given repo
+        * `source="githubuser/repo:some/doc/path/foo.mkd"` - Github user/repo:filepath-from-repo-root
+        * `source="githubuser/repo:some/doc/path/foo.mkd:abe823e"` - Github ref at specific commit id
+    * Specify as a `source=` query parameter in any of the above formats
+* If needed configure the focusSelector to be whatever you want to jump between, defaults to `ul > li`. See example in example.html. As with `source` this can be specified as a `focus=` query parameter
+* If needed you can turn code prettifying on/off, see example.html (defaults to on)
+
 
 
 ##Features

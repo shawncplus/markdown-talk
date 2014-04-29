@@ -10,7 +10,13 @@ document.addEventListener('markdownrender', function ()
 		document.querySelector('div.container').appendChild(subtitle);
 	}
 
-	var focus_selector = (window.MarkdownTalk && window.MarkdownTalk.focusSelector) || 'ol > li';
+	var focus_query = window.location.search.match(/[\?&]focus=([^&#]*)/);
+	focus_query = focus_query ? decodeURIComponent(focus_query[1]) : null;
+	var focus_selector =
+		focus_query ||
+		(window.MarkdownTalk && window.MarkdownTalk.focusSelector) ||
+		'ol > li';
+
 	var focusPoints = document.querySelectorAll(focus_selector);
 	if (!focusPoints.length)
 	{

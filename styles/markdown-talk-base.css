@@ -123,6 +123,10 @@ ol li > p {
 	font-family: sans-serif;
 }
 
+.container > ul > li {
+	margin-left: 20px;
+}
+
 .focus_point {
 	border: 2px solid #099;
 	border-radius: 10px;
@@ -130,6 +134,7 @@ ol li > p {
 	padding: 10px;
 	margin: 10px 0;
 	border-left: none !important;
+	color: #e7e7e7;
 }
 
 blockquote {

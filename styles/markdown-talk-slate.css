@@ -30,12 +30,13 @@
 
 body {
 	font-family: mplus-1mn-regular, monospace;
-	color: #e7e7e7;
+	color: #b9b8b1;
 	background-color: #222;
 }
 
 code, pre {
 	font-family: mplus-1mn-medium;
+	color: #ffffd7;
 }
 
 ol + p, pre + ol {

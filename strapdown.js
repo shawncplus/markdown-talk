@@ -87,19 +87,22 @@
 	// <body> stuff
 	//
 
-
-	var source = markdownEl.getAttribute('source');
+	var source_query = window.location.search.match(/[\?&]source=([^&#]*)/);
+	var source = source_query ? source_query[1] : markdownEl.getAttribute('source');
 
 	var markdownContent = '';
 	if (source && jQuery)
 	{
-		if (source.match(/^\w+\/[\w\-]+?:.+$/))
+		if (source.match(/^\w+\/[\w\-]+/))
 		{
-			var repo = source.split(':')[0];
-			var path = source.split(':')[1];
+			var parts = source.split(':');
+			var repo = parts[0];
+			var path = parts[1] ? '/contents/' + parts[1] : '/readme';
+			var ref  = parts.length > 2 ? parts[2] : 'master';
+
 			jQuery.ajax({
 				type: "GET",
-				url: 'https://api.github.com/repos/' + repo + '/contents/' + path,
+				url: 'https://api.github.com/repos/' + repo + path + '?ref=' + ref,
 				dataType: "jsonp",
 				success: function(data) {
 					if (typeof data.data.content === 'undefined' || data.data.encoding !== 'base64')
@@ -156,13 +159,16 @@
 		document.getElementById('content').innerHTML = html;
 
 		// Prettify
-		var codeEls = document.getElementsByTagName('code');
-		for (var i=0, ii=codeEls.length; i<ii; i++) {
-			var codeEl = codeEls[i];
-			var lang = codeEl.className;
-			codeEl.className = 'prettyprint lang-' + lang;
+		if (typeof window.MarkdownTalk !== 'undefined' && window.MarkdownTalk.prettify !== false)
+		{
+			var codeEls = document.getElementsByTagName('code');
+			for (var i=0, ii=codeEls.length; i<ii; i++) {
+				var codeEl = codeEls[i];
+				var lang = codeEl.className;
+				codeEl.className = 'prettyprint lang-' + lang;
+			}
+			prettyPrint();
 		}
-		prettyPrint();
 
 		// Style tables
 		var tableEls = document.getElementsByTagName('table');
